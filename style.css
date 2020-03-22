@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(223, 230, 236);
+}
+
+.box {
+  grid-area: content;
+}
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(
+    to right,
+    rgb(177, 67, 67),
+    rgb(183, 41, 202),
+    rgb(73, 71, 122)
+  );
+  justify-content: center;
+}
+.skill {
+  justify-content: center;
+}
+.footer {
+  grid-area: footer;
+  background: rgb(227, 232, 236);
+}
+.container {
+  font-size: 1.5em;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "sidebar"
+    "content"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px 800px 250px;
+}
+
+.footer {
+  padding: 1em;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+nav li {
+  list-style: none;
+  padding: 1rem;
+}
+nav li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.5s;
+}
+nav li a:hover {
+  transition: 0.5s;
+}
+.intro {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro img {
+  width: 250px;
+  height: 400px;
+}
+.intro h1 {
+  font-size: 2em;
+  font-weight: 200;
+  color: #373d46;
+}
+.intro p {
+  font-weight: 300;
+  line-height: 1.8em;
+  color: purple;
+}
+
+.contact {
+  margin: 0px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px;
+}
+.contact a {
+  display: inline-flex;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  background: rgb(116, 87, 87);
+  color: white;
+  margin: 0px;
+  border-radius: 50%;
+  justify-content: center;
+  font-size: 35px;
+  align-items: center;
+}
+
+@media (min-width: 1040px) {
+  .container {
+    grid-template-areas:
+      "sidebar content"
+      "sidebar footer";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .sidebar {
+    background: linear-gradient(
+      rgba(249, 107, 142, 1),
+      rgba(218, 103, 230, 1),
+      rgba(130, 125, 254, 1)
+    );
+    padding-top: 3em;
+  }
+
+  .intro {
+    text-align: left;
+    margin: 2em auto;
+  }
+
+  .intro img {
+    width: 250px;
+    float: right;
+  }
+
+  .intro h1 {
+    font-size: 3em;
+  }
+
+  .intro p {
+    width: 50%;
+  }
+
+  footer ul {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
